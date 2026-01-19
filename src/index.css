@@ -1,5 +1,38 @@
 :root {
-  background-color: #252e40;
+  /* Corporate Premium Palette */
+  --bg-color: #0d131b;
+  /* Deep dark background */
+  --surface-color: #1a202c;
+  /* Card surface */
+  --primary-color: #3498db;
+  /* Bright accent */
+  --secondary-color: #cbd5e0;
+  /* Muted text - Lightened for better readability */
+  --text-color: #edf2f7;
+  /* Primary text - Brightened */
+  --border-color: #2d3748;
+  /* Subtle borders */
+  --font-main: "Inter", sans-serif;
+
+  /* Theme Specific - Dark Default */
+  --hero-gradient-start: #ffffff;
+  --hero-gradient-end: #cbd5e0;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] {
+  --bg-color: #f7f9fc;
+  --surface-color: #ffffff;
+  --text-color: #2d3748;
+  --secondary-color: #4a5568;
+  --border-color: #e2e8f0;
+
+  /* Theme Specific - Light Overrides */
+  --hero-gradient-start: #2d3748;
+  --hero-gradient-end: #718096;
+  --glass-bg: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -11,8 +44,15 @@
 body {
   margin: 0;
   scroll-behavior: smooth;
-  font-family: "Inter", sans-serif;
-  background-color: #252e40;
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-padding-top: 2rem;
 }
 
 .container {
@@ -21,233 +61,76 @@ body {
 }
 
 main {
-  flex: 1; /* Takes remaining space */
-  padding: 1rem;
-}
-
-aside {
-  width: 200px;
-  padding: 1rem;
-  background-color: #f0f0f0;
-  margin-left: 1rem;
-}
-
-.sidebar {
-  background-color: #0d131b;
-  color: #e0e7e9;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 300px;
-  height: 100vh;
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profile-section {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.nav-links a {
-  margin-top: 2rem;
-  display: block;
-  font-size: large;
-  font-weight: 900;
-  color: white;
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-  text-align: center;
-}
-
-.nav-links a:hover {
-  transform: scale(1.3);
-  color: #3498db;
-}
-
-#sidebartitle {
-  display: inline-block;
-  font-size: 2rem;
-  margin-top: 3rem;
-  transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-}
-
-#sidebartitle:hover {
-  transform: scale(1.2); /* Grows and then snaps back slightly */
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  } /* Moves it up */
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.picprofileimg {
-  margin-top: 2rem;
-  object-fit: cover;
-  border-radius: 50%;
-  object-fit: cover;
-  width: 150px;
-  height: 150px;
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  padding-bottom: 1rem;
-}
-
-/* This container pushes everything to the bottom */
-.sidebar-footer-container {
-  margin-top: auto;
-  text-align: center;
-  padding-bottom: 1rem;
-  width: 100%;
-}
-
-.contact-title {
-  font-size: 1.7rem;
-  margin-bottom: 2rem; /* Adjust this to control gap between text and icons */
-  color: #e0e7e9;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* This handles the horizontal alignment of icons */
-.icons-row {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-}
-
-.contact-icon {
-  margin-bottom: 0rem;
-  transition: transform 0.3s ease;
-}
-
-.contact-icon:hover {
-  transform: scale(1.9);
-}
-
-.about-me {
-  display: flex;
-  flex-direction: column;
-  color: #e0e7e9;
-}
-
-h1.about-me {
-  position: relative;
-  left: 7rem;
-  font-weight: 50px;
-  font-size: 8rem;
-  justify-content: center;
-  text-shadow: 8px 8px black;
-}
-
-p.about-me {
-  display: block;
-  margin-top: 6rem;
-  position: relative;
-  left: 7rem;
-  font-weight: 4rem;
-  font-size: 3rem;
-  text-shadow: 4px 4px black;
-}
-p.about-me::first-letter {
-  font-size: 10rem;
-  font-weight: bold;
-  float: left;
-  margin-right: 8px;
-  line-height: 1;
-  text-shadow: 8px 8px black;
-}
-
-.training {
-  color: #e0e7e9;
-}
-
-/* Container for each category (Education, Work) */
-div.training {
-  display: block;
-  margin-left: 7rem;
-  margin-top: 4rem; /* Adds space between the major sections */
-}
-
-/* Big section headers (EDUCATION, WORK EXPERIENCE) */
-h1.training-section-header {
-  font-size: 3rem;
-  color: #e0e7e9;
-  text-shadow: 4px 4px black;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
-/* Horizontal line under headers */
-.header-line {
-  border: 0;
-  height: 2px;
-  background: #e0e7e9;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-/* The side-by-side flex layout */
-.entry {
-  display: flex;
-  align-items: flex-start; /* Keeps line starting at the top of the text */
-  margin-bottom: 3rem;
-}
-
-/* Left side: Date/Location */
-.date-location {
-  flex: 0 0 200px;
-  padding-right: 20px;
-  font-style: italic;
-  font-size: 1.2rem;
-  text-shadow: 2px 2px black;
-}
-
-/* Right side: Content with the vertical line */
-.job-details {
   flex: 1;
-  padding-left: 25px;
-  border-left: 3px solid #e0e7e9; /* This is the vertical line from your image */
-  text-align: left;
+  padding: 2rem 4rem;
+  /* More breathing room */
+  max-width: 1200px;
+  /* Prevent stretching on huge screens */
+  margin: 0 auto;
 }
 
-.job-details h3 {
-  font-size: 1.8rem;
-  text-decoration: underline;
+/* Typography Enhancements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  line-height: 1.2;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px black;
 }
 
-/* Bullet points */
-ul.training {
-  list-style-type: disc;
-  padding-left: 20px;
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-li.training {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  line-height: 1.4;
-  text-shadow: 2px 2px black;
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+p {
+  font-size: 1.125rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Card Utility Class */
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-color);
 }

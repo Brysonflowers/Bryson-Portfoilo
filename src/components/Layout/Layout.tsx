@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Sidebar from "../Sidebar/Sidebar";
 import styles from "./Layout.module.css";
 
 interface LayoutProps {
@@ -10,9 +10,14 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <Header />
-      <main className={styles.mainContent}>{children}</main>
-      <Footer />
+      {/* Header removed as per new design, Sidebar handles navigation */}
+      <div className={styles.container}>
+        <Sidebar />
+        <main className={styles.mainContent}>
+          {children}
+          <Footer />
+        </main>
+      </div>
     </div>
   );
 };

@@ -12,7 +12,7 @@ describe("Layout", () => {
         </Layout>
       </ThemeProvider>
     );
-    expect(screen.getByRole("banner")).toBeInTheDocument(); // Header
+    expect(screen.getByRole("complementary")).toBeInTheDocument(); // Sidebar
     expect(screen.getByRole("contentinfo")).toBeInTheDocument(); // Footer
     expect(screen.getByTestId("child")).toBeInTheDocument();
   });

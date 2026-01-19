@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Build the core portfolio structure with responsive layout and section placeholders**
+- [~] **Track: Build the core portfolio structure with responsive layout and section placeholders**
   *Link: [./conductor/tracks/portfolio_core_20260119/](./conductor/tracks/portfolio_core_20260119/)*

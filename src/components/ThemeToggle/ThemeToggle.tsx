@@ -6,12 +6,14 @@ const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button 
-      className={styles.toggle} 
+    <button
+      className={styles.toggle}
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
     >
-      {theme === "light" ? "🌙" : "☀️"}
+      <span className={styles.icon}>{theme === "light" ? "🌙" : "☀️"}</span>
+      <span className={styles.label}>{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
     </button>
   );
 };

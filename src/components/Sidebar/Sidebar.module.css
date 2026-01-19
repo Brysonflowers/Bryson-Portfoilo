@@ -1,0 +1,182 @@
+.sidebar {
+  background-color: #0d131b;
+  color: #e0e7e9;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1001;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  /* Handle smaller height screens */
+}
+
+/* Dark mode compatibility - sidebar remains dark by design in both modes */
+
+.profileSection {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.sidebartitle {
+  display: block;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+.sidebartitle:hover {
+  transform: scale(1.05);
+}
+
+.picprofileimg {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  border: 3px solid #3498db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.picprofileimg:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: auto;
+  /* Pushes footer down */
+}
+
+.navLinks a {
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #a0aec0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.navLinks a:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.navLinks a.active {
+  color: #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 #3498db;
+  /* Left accent bar */
+}
+
+.footerSpacer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebarFooterContainer {
+  text-align: center;
+  width: 100%;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contactTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #e0e7e9;
+  font-weight: 600;
+  /* subtle glow or animation */
+}
+
+.iconsRow {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.contactIcon {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.contactIcon:hover {
+  transform: scale(1.2) translateY(-2px);
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .profileSection {
+    width: auto;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .picprofileimg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sidebartitle {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .navLinks {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .navLinks a {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+  }
+
+  .sidebarFooterContainer {
+    display: none;
+    /* Hide contacts in mobile header for now, or move them */
+  }
+
+  .footerSpacer {
+    display: none;
+  }
+}

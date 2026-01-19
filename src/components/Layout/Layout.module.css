@@ -1,15 +1,20 @@
 .layout {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
 
+.container {
+  display: block;
+}
+
 .mainContent {
-  flex: 1;
-  padding-top: 5rem; /* Space for fixed header */
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin-left: 300px;
+  padding: 3rem;
+  min-height: 100vh;
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
 }

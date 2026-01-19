@@ -1,0 +1,79 @@
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.projectCard {
+    padding: 0;
+    /* Remove default padding to let image bleed */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagePlaceholder {
+    height: 200px;
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.projectContent {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectTitle {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.projectDesc {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.techStack {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.techStack span {
+    font-size: 0.8rem;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+}
+
+.linkBtn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.linkBtn:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
