@@ -127,56 +127,116 @@
   opacity: 1;
 }
 
-@media (max-width: 1024px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding: 1rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
+/* Hamburger Button (Default Hidden) */
+.hamburgerBtn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 2000;
+  background: rgba(13, 19, 27, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.6rem;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
 
-  .profileSection {
-    width: auto;
-    margin: 0;
+.hamburgerBtn .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: 1px;
+}
+
+.hamburgerBtn.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.hamburgerBtn.open .bar:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburgerBtn.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Mobile Overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Mobile Media Query */
+@media (max-width: 768px) {
+
+  /* Show Hamburger */
+  .hamburgerBtn {
     display: flex;
-    align-items: center;
-    gap: 1rem;
   }
 
+  /* Sidebar transforms into a Slide-out Drawer */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+    width: 280px;
+    /* Slightly narrower */
+    z-index: 1002;
+    /* Above overlay */
+  }
+
+  /* When toggled open */
+  .sidebar.showMobile {
+    transform: translateX(0);
+  }
+
+  /* Adjust Profile Image */
   .picprofileimg {
-    width: 60px;
-    height: 60px;
-  }
-
-  .sidebartitle {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-
-  .navLinks {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
+    width: 100px;
+    height: 100px;
+    margin-top: 2rem;
+    /* Add spacing for safe area */
   }
 
   .navLinks a {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-    margin: 0 0.5rem;
+    font-size: 1.1rem;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 0.2rem;
   }
 
+  /* Footer adjustments for mobile menu */
   .sidebarFooterContainer {
-    display: none;
-    /* Hide contacts in mobile header for now, or move them */
+    display: block;
+    /* Show footer in menu */
+    margin-top: auto;
+    padding-bottom: 2rem;
   }
 
   .footerSpacer {
-    display: none;
+    display: block;
   }
 }
