@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { ThemeProvider, useTheme } from "./ThemeContext";
 
 const TestComponent = () => {
@@ -33,10 +33,10 @@ describe("ThemeContext", () => {
       </ThemeProvider>
     );
     const button = screen.getByText("Toggle Theme");
-    
+
     fireEvent.click(button);
     expect(screen.getByTestId("theme-value")).toHaveTextContent("dark");
-    
+
     fireEvent.click(button);
     expect(screen.getByTestId("theme-value")).toHaveTextContent("light");
   });
