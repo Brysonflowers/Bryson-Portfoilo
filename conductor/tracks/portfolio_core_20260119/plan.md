@@ -2,9 +2,9 @@
 
 ## Phase 1: Project Skeleton & Layout Foundation
 
-- [ ] Task: Set up Layout components and responsive grid
-    - [ ] Write tests for Layout, Header, and Footer components
-    - [ ] Implement Layout, Header, and Footer with basic CSS
+- [x] Task: Set up Layout components and responsive grid [1a7266b]
+    - [x] Write tests for Layout, Header, and Footer components
+    - [x] Implement Layout, Header, and Footer with basic CSS
 - [ ] Task: Implement Theme Context for Light/Dark mode
     - [ ] Write tests for ThemeProvider and theme toggle logic
     - [ ] Implement ThemeProvider and a basic toggle component
