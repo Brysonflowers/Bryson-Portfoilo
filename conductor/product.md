@@ -24,3 +24,6 @@ The primary goal is to provide a digital, interactive version of the developer's
 
 ## Tone and Style
 The portfolio will maintain a **corporate and highly professional** tone. The messaging and visual presentation will focus on enterprise-grade experience, reliability, and technical excellence.
+
+## Infrastructure & Deployment
+- **GitHub Pages:** The portfolio is designed to be hosted on GitHub Pages, ensuring a reliable and easily accessible online presence integrated directly with the project's source control.
