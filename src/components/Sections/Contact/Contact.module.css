@@ -90,3 +90,34 @@
     background: rgba(255, 255, 255, 0.05);
     border-color: var(--text-color);
 }
+
+@media (max-width: 768px) {
+    .contactContainer {
+        padding: 1.5rem 1rem;
+    }
+
+    .emailCard {
+        padding: 1.5rem;
+    }
+
+    .introText {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .emailAddress {
+        font-size: 1.25rem;
+    }
+
+    .actionButtons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}
